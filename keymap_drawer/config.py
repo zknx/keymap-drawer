@@ -163,9 +163,13 @@ class DrawConfig(BaseSettings, env_prefix="KEYMAP_", extra="ignore"):
                 font-size: 11px;
             }
 
-            text.hold, text.bl, text.br {
+            text.bl, text.br {
                 text-anchor: middle;
                 dominant-baseline: auto;
+            }
+
+            text.hold {
+                dominant-baseline: central;
             }
 
             text.shifted, text.tl, text.tr {

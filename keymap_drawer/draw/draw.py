@@ -90,14 +90,7 @@ class KeymapDrawer(ComboDrawerMixin, UtilsMixin):
         y_offset = h / 2 - self.cfg.inner_pad_h - self.cfg.small_pad
 
         self._draw_legend(
-            tap_shift,
-            tap_words,
-            classes=["key", l_key.type],
-            legend_type="tap",
-            shift=shift,
-        )
-        self._draw_legend(
-            Point(0, y_offset),
+            Point(0, 0),
             [l_key.hold],
             classes=["key", l_key.type],
             legend_type="hold",
@@ -145,6 +138,13 @@ class KeymapDrawer(ComboDrawerMixin, UtilsMixin):
             [l_key.br],
             classes=["key", l_key.type],
             legend_type="br",
+        )
+        self._draw_legend(
+            tap_shift,
+            tap_words,
+            classes=["key", l_key.type],
+            legend_type="tap",
+            shift=shift,
         )
 
         self.out.write("</g>\n")
